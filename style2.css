@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Poppins", serif;
+}
+
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color:#323946;
+    --main-color:#7cf03d;
+    --white-color:#fff;
+    --disbled-color:#fff3;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    color: var(--white-color);
+}
+
+/* navbar */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+header .logo{
+    color: var(--white-color);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+header a{
+    margin: 2px;
+}
+
+nav a{
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: 0.5s;
+}
+
+nav a:hover{
+    color: var(--main-color);
+}
+
+
+/* ====== Portfolio section ====== */
+.Portfolio{
+    padding: 8.5rem 5rem;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+.Portfolio .heading{
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.Portfolio .heading span{
+    color: var(--main-color);
+}
+
+.Portfolio .Portfolio-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+
+.Portfolio .item-project {
+    width:calc(100% / 3 - 48px);
+    background: var(--second-bg-color);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.Portfolio .item-project:hover{
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+.item-project img{
+    width: 100%;
+    border-radius: 2rem 10px 0 0;
+}
+
+.content-item{
+    padding: 1rem 3rem;
+}
+.item-project h3{
+    font-size: 2.5rem;
+    margin: 0.8rem 0 2rem;
+}
+
+.item-project p{
+    font-size: 1.2rem;
+}
+
+.item-project .tech{
+    margin: 2rem 0;
+    color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-project .tech span{
+    background: red;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.item-project .live-github a{
+    position: relative;
+    display: inline-flex;
+    font-size: 3rem;
+    color: var(--white-color);
+    background: var(--second-bg-color);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.item-project .live-github a:hover{
+    color: var(--main-color);
+}
+
+.item-project .live-github a:first-child{
+    margin: 1rem 4rem;
+}
+
+.item-project .live-github a:first-child i{
+    transform: rotate(135deg);
+}
+
+.item-project .live-github a span{
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9) ;
+    font-size: 1.6rem;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border-radius: .6rem;
+    pointer-events: none;
+    background-color: var(--white-color);
+    color: var(--bg-color);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.item-project .live-github a:hover span{
+    top: -90%;
+    opacity: 1;
+    transform: translateX(-50%) scale(1) ;
+}
+
+
+/* responsive page */
+@media screen and (max-width:1200px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width:950px){
+    .Portfolio{
+        padding: 8rem 4rem;
+    }
+
+    .Portfolio .Portfolio-container{
+        gap: 32px;
+    }
+
+    .Portfolio .item-project {
+        width:calc(100% / 2 - 32px);
+    }
+}
+
+@media screen and (max-width:650px){
+    .Portfolio{
+        padding: 8.5rem 2rem;
+    }
+
+    .Portfolio .Portfolio-container{
+        gap: 16px;
+    }
+
+    .Portfolio .item-project {
+        width:calc(100% / 1 - 16px);
+    }
+}
